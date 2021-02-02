@@ -1,22 +1,24 @@
-# basic_api/models.py
 from django.db import models
+
+# Create your models here.
 
 #list
 Grade = [
-	('excellent', 1),
-	('average', 0),
-	('bad', -1)
+    ('excellent',1),
+    ('average',0),
+    ('bad',-1)
+
 ]
 
-# DataFlair
 class DRFPost(models.Model):
-	name = models.CharField(max_length = 100)
-	author = models.CharField(max_length = 100)
-	uploaded = models.DateTimeField(auto_now_add = True)
-	rating = models.CharField(choices = Grade, default = 'average', max_length = 50)
+    name = models.CharField(max_length = 100)
+    author = models.CharField(max_length = 100)
+    uploaded = models.DateTimeField(auto_now_add= True)
+    rating = models.CharField(choices = Grade, default ='average', max_length=50)
 
-	class Meta:
-		ordering = ['uploaded']
+    class Meta:
+        ordering = ['uploaded']
 
-	def __str__(self):
-		return self.name
+    def __str__(self):
+        return self.name
+        
