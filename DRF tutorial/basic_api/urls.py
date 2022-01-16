@@ -2,7 +2,7 @@
 # DataFlair
 from django.urls import path
 from rest_framework.urlpatterns import format_suffix_patterns
-from basic_api import views
+from . import views
 
 urlpatterns = [
     path('basic/', views.API_objects.as_view()),

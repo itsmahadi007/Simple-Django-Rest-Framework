@@ -1,0 +1,20 @@
+version: '3'
+
+services:
+
+  erp_cash:
+    build: .
+    command: python manage.py runserver 0.0.0.0:6000
+    volumes:
+      - .:/app/backend
+    ports:
+      - 6000:6000
+
+#  frontend_vue:
+#    image: julfikar4028/erp_cash_frontend
+#    stdin_open: true
+#    command: npm run serve
+#    expose:
+#      - 8080
+#    ports:
+#      - 8080:8080
